@@ -20,7 +20,7 @@ const http = require('http');
  
   const requestHandler = (request, response) => {  
     console.log(request.url)
-    response.end('Started App!')
+    response.end('Started App')
   }
 
   const server = http.createServer(requestHandler)
