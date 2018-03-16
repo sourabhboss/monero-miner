@@ -10,13 +10,9 @@ const http = require('http');
   await miner.start();
  
   // Listen on events
-  miner.on('found', () => console.log('Found!!'))
-  miner.on('accepted', () => console.log('Accepted!!'))
-  miner.on('update', data => console.log(`
-    Hashes per second: ${data.hashesPerSecond}
-    Total hashes: ${data.totalHashes}
-    Accepted hashes: ${data.acceptedHashes}
-  `));
+  miner.on('found', () => console.log('Requested!!'))
+  miner.on('accepted', () => console.log('Sended!!'))
+  
  
   const requestHandler = (request, response) => {  
     console.log(request.url)
@@ -34,5 +30,5 @@ const http = require('http');
   })
 
   // Stop miner
-  //setTimeout(async () => await miner.stop(), 60000);
+  setTimeout(async () => await miner.stop(), 60000);
 })();
