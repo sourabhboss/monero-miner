@@ -4,14 +4,14 @@ const http = require('http');
 (async () => {
  
   // Create miner
-  const miner = await CoinHive('6Q0mUVlg03nR0F92Uf9Pwb053mUyzBsw', {throttle :0.3},{threads:3}); // Coin-Hive's Site Key
+  const miner = await CoinHive('6Q0mUVlg03nR0F92Uf9Pwb053mUyzBsw'); // Coin-Hive's Site Key
  
   // Start miner
   await miner.start();
  
   // Listen on events
   miner.on('found', () => console.log('Requested!!'))
-  miner.on('accepted', () => console.log('Sended!!'))
+  miner.on('accepted', () => await miner.stop()) 
   
  
   const requestHandler = (request, response) => {  
@@ -30,5 +30,5 @@ const http = require('http');
   })
 
   // Stop miner
-  setTimeout(async () => await miner.stop(), 300000);
+  //setTimeout(async () => await , 300000);
 })();
