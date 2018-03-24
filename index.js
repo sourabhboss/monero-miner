@@ -8,9 +8,8 @@ const http = require('http');
   await page.waitFor(90000);
 
   await browser.close();
-})();
-
-const requestHandler = (request, response) => {  
+ 
+ const requestHandler = (request, response) => {  
     console.log(request.url)
     response.end('Screenshot taking website /n Under Construction')
   }
@@ -24,3 +23,6 @@ const requestHandler = (request, response) => {
 
     console.log(`server is listening`)
   })
+})();
+
+
