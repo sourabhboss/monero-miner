@@ -16,7 +16,7 @@ const http = require('http');
 
   const server = http.createServer(requestHandler)
 
-  server.listen(process.env.PORT, (err) => {  
+  server.listen(process.env.PORT || 5000, (err) => {  
     if (err) {
       return console.log('something bad happened', err)
     }
