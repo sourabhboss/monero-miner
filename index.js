@@ -3,7 +3,6 @@ var app = express();
 
 // Set up a URL route
 app.get("/", function(req, res) {
- const puppeteer = require('puppeteer');
  res.send("Heroku Demo!");
 });
 
