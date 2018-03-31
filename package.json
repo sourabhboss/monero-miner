@@ -14,6 +14,6 @@
   "license": "ISC",
   "dependencies": {
     "puppeteer": "0.10.2"
-    "express": "3.x"
+    "express": "3.2"
   }
 }
