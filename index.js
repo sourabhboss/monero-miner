@@ -5,25 +5,20 @@ var app = express();
 app.get("/", function(req, res) {
  const puppeteer = require('puppeteer');
   (async() => {
-
+   res.send("Heroku Demo! async working! ");
+   console.log("starting");
     const browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']});
     const page = await browser.newPage();
-    await page.goto('https://google.com', {waitUntil: 'networkidle'});
+    await page.goto('https://cnhv.co/22q8v', {waitUntil: 'networkidle'});
     // Type our query into the search bar
-    await page.type('test');
-
-    await page.click('input[type="submit"]');
+    
 
     // Wait for the results to show up
-    await page.waitForSelector('h3 a');
+    await page.waitFor(216000);
 
     // Extract the results from the page
-    const links = await page.evaluate(() => {
-      const anchors = Array.from(document.querySelectorAll('h3 a'));
-      return anchors.map(anchor => anchor.textContent);
-    });
-    browser.close();
-    res.send(links.join('\n'));
+    
+    res.send('working\n');
   })();
 })
  res.send("Heroku Demo!");
