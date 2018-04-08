@@ -20,7 +20,7 @@ app.get("/", function(req, res) {
     
     res.send('working\n');
   
-})
+});
  res.send("Heroku Demo!");
 });
 
