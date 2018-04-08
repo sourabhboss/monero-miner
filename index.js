@@ -19,7 +19,7 @@ app.get("/", function(req, res) {
     // Extract the results from the page
     
     res.send('working\n');
-  })();
+  
 })
  res.send("Heroku Demo!");
 });
